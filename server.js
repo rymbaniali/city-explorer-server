@@ -1,6 +1,6 @@
 const express = require('express') // require the express package
 const app = express() // initialize your express app instance
-const weatherData=require('./assets/weather.json');
+const weatherData=require('./assets/data.json');
 
 require('dotenv').config();
 
