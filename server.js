@@ -19,7 +19,7 @@ app.get('/',
 ///////////////////////////////////////////////////////////////////////////////////////
 
 app.get('/weather', (req, res) => {
-  const responseData = weatherData.data.map(obj => new Weather(obj));
+  const responseData = weatherData.data.data.map(obj => new Weather(obj));
   res.json(responseData);
 });
 
@@ -52,6 +52,7 @@ app.get('/weather', (req, res) => {
 
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////
+
 app.get('/movies', (req, res) => {
   const moviesData = moviesData.data.map(obj => new Movie (obj));
   res.json(responseData);
