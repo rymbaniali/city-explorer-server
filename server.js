@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const weatherData = require('./assets/data.json');
 require('dotenv').config();
-const port = process.env.port;
+const PORT = process.env.PORT;
 const cors = require('cors');
 
 app.use(cors())
@@ -14,10 +14,10 @@ app.get('/',
   })
 
 
-// app.get('/weather', (req, res) => {
-//   responseData = weatherData.data.map(obj => new Weather(obj));
-//   res.json(responseData);
-// });
+app.get('/weather', (req, res) => {
+  responseData = weatherData.data.map(obj => new Weather(obj));
+  res.json(responseData);
+});
 
 
 class Weather {
@@ -45,4 +45,6 @@ app.get('/weather', (req, res) => {
 
 });
 
-app.listen(port);
+app.listen(PORT,()=>{
+  console.log('listening in port',PORT)
+});
